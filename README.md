@@ -1,1 +1,3 @@
-# demanda_api_cadastro
+# API de Cadastro
+
+- Cadastro e exibição de usuários básica
