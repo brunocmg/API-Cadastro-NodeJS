@@ -13,88 +13,89 @@ Este projeto tem como finalidade praticar e demonstrar conceitos fundamentais de
 - JavaScript
 
 ## 📁 Estrutura do Projeto
+
+```
 API-Cadastro-NodeJS/
 ├── src/
-│ ├── data/
-│ ├── routes/
-│ └── index.js
+│   ├── data/
+│   ├── routes/
+│   └── index.js
 ├── .gitignore
 ├── package.json
 └── README.md
+```
 
 ## ▶️ Como Executar o Projeto
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/brunocmg/API-Cadastro-NodeJS.git
-
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
    cd API-Cadastro-NodeJS
-
+   ```
+3. Instale as dependências:
+   ```bash
    npm install
-
+   ```
+4. Inicie o servidor:
+   ```bash
    node src/index.js
+   ```
 
-   A API ficará disponível por padrão em http://localhost:3000.
+A API ficará disponível por padrão em `http://localhost:3000`.
 
-📌 Endpoints
-➕ Cadastrar Usuário
-URL: POST /usuarios
+## 📌 Endpoints
 
-Body (JSON):
+### ➕ Cadastrar Usuário
 
-json
-Copiar
-Editar
-{
-  "nome": "João Silva",
-  "email": "joao@example.com"
-}
-📄 Listar Usuários
-URL: GET /usuarios
+- **URL:** `POST /usuarios`
+- **Body (JSON):**
+  ```json
+  {
+    "nome": "João Silva",
+    "email": "joao@example.com"
+  }
+  ```
 
-🧪 Como Testar a API (Thunder Client ou Postman)
-🔹 Usando Thunder Client (recomendado no VS Code)
-Instale a extensão Thunder Client no VS Code.
+### 📄 Listar Usuários
 
-Vá até a aba lateral do Thunder Client.
+- **URL:** `GET /usuarios`
 
-Crie uma nova requisição:
+## 🧪 Como Testar a API (Thunder Client ou Postman)
 
-Método: POST
+### 🔹 Usando Thunder Client (recomendado no VS Code)
 
-URL: http://localhost:3000/usuarios
+1. Instale a extensão **Thunder Client** no VS Code.
+2. Vá até a aba lateral do Thunder Client.
+3. Crie uma nova requisição:
+   - Método: `POST`
+   - URL: `http://localhost:3000/usuarios`
+   - Aba **Body** > selecione `JSON` e insira:
+     ```json
+     {
+       "nome": "João da Silva",
+       "email": "joao@example.com"
+     }
+     ```
+   - Clique em **Send** para enviar.
+4. Para listar os usuários cadastrados:
+   - Método: `GET`
+   - URL: `http://localhost:3000/usuarios`
+   - Clique em **Send**.
 
-Aba Body > selecione JSON e insira:
+### 🔹 Usando Postman
 
-json
-Copiar
-Editar
-{
-  "nome": "João da Silva",
-  "email": "joao@example.com"
-}
-Clique em Send para enviar.
+1. Abra o Postman.
+2. Crie uma requisição do tipo **POST**:
+   - URL: `http://localhost:3000/usuarios`
+   - Aba **Body** > `raw` > selecione `JSON`, e insira o JSON como mostrado acima.
+3. Para listar:
+   - Faça uma nova requisição do tipo **GET** na mesma URL, sem body.
 
-Para listar os usuários cadastrados:
+---
 
-Método: GET
+## 📚 Finalidade
 
-URL: http://localhost:3000/usuarios
-
-Clique em Send.
-
-🔹 Usando Postman
-Abra o Postman.
-
-Crie uma requisição do tipo POST:
-
-URL: http://localhost:3000/usuarios
-
-Aba Body > raw > selecione JSON, e insira o JSON como mostrado acima.
-
-Para listar:
-
-Faça uma nova requisição do tipo GET na mesma URL, sem body.
-
-📚 Finalidade
 Este projeto foi desenvolvido com fins de aprendizado pessoal, sem fins comerciais.
