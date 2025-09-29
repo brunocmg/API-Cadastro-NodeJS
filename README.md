@@ -1,101 +1,68 @@
-# API-Cadastro-NodeJS
+# Node.js User CRUD API
 
-Uma API simples para cadastro e listagem de usuários, desenvolvida com fins de estudo utilizando **Node.js**, **Express** e **JavaScript** puro.
+A simple RESTful API for user management built with Node.js, Express, and TypeScript.  
+Supports full CRUD operations (Create, Read, Update, Delete) for users, with in-memory storage.
 
-## 🚀 Objetivo
+## Features
 
-Este projeto tem como finalidade praticar e demonstrar conceitos fundamentais de construção de APIs RESTful utilizando o ambiente Node.js, com foco no cadastro e listagem de usuários.
+- Create user
+- List all users
+- Get user by ID
+- Update user
+- Delete user
 
-## 🛠️ Tecnologias Utilizadas
+## Getting Started
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- JavaScript
+### Prerequisites
 
-## 📁 Estrutura do Projeto
+- Node.js (v18+ recommended)
+- npm
 
+### Installation
+
+```bash
+git clone https://github.com/seu-usuario/api-crud-node.git
+cd api-crud-node
+npm install
 ```
-API-Cadastro-NodeJS/
-├── src/
-│   ├── data/
-│   ├── routes/
-│   └── index.js
-├── .gitignore
-├── package.json
-└── README.md
+
+### Running the Project
+
+Compile TypeScript:
+
+```bash
+npx tsc
 ```
 
-## ▶️ Como Executar o Projeto
+Start the server:
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/brunocmg/API-Cadastro-NodeJS.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd API-Cadastro-NodeJS
-   ```
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
-4. Inicie o servidor:
-   ```bash
-   node src/index.js
-   ```
+```bash
+node dist/server.js
+```
 
-A API ficará disponível por padrão em `http://localhost:3000`.
+The API will be available at `http://localhost:3000`.
 
-## 📌 Endpoints
+## API Endpoints
 
-### ➕ Cadastrar Usuário
+| Method | Endpoint         | Description           |
+|--------|------------------|----------------------|
+| POST   | /users           | Create a new user    |
+| GET    | /users           | List all users       |
+| GET    | /users/:id       | Get user by ID       |
+| PUT    | /users/:id       | Update user by ID    |
+| DELETE | /users/:id       | Delete user by ID    |
 
-- **URL:** `POST /usuarios`
-- **Body (JSON):**
-  ```json
-  {
-    "nome": "João Silva",
-    "email": "joao@example.com"
-  }
-  ```
+### Example Request (Create User)
 
-### 📄 Listar Usuários
+POST `/users`  
+Body (JSON):
+```json
+{
+  "name": "Maria",
+  "email": "maria@email.com"
+}
+```
 
-- **URL:** `GET /usuarios`
+## License
 
-## 🧪 Como Testar a API (Thunder Client ou Postman)
-
-### 🔹 Usando Thunder Client (recomendado no VS Code)
-
-1. Instale a extensão **Thunder Client** no VS Code.
-2. Vá até a aba lateral do Thunder Client.
-3. Crie uma nova requisição:
-   - Método: `POST`
-   - URL: `http://localhost:3000/usuarios`
-   - Aba **Body** > selecione `JSON` e insira:
-     ```json
-     {
-       "nome": "João da Silva",
-       "email": "joao@example.com"
-     }
-     ```
-   - Clique em **Send** para enviar.
-4. Para listar os usuários cadastrados:
-   - Método: `GET`
-   - URL: `http://localhost:3000/usuarios`
-   - Clique em **Send**.
-
-### 🔹 Usando Postman
-
-1. Abra o Postman.
-2. Crie uma requisição do tipo **POST**:
-   - URL: `http://localhost:3000/usuarios`
-   - Aba **Body** > `raw` > selecione `JSON`, e insira o JSON como mostrado acima.
-3. Para listar:
-   - Faça uma nova requisição do tipo **GET** na mesma URL, sem body.
-
----
-
-## 📚 Finalidade
-
-Este projeto foi desenvolvido com fins de aprendizado pessoal, sem fins comerciais.
+MIT
