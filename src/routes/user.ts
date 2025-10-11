@@ -6,6 +6,7 @@ import {
   updateUser,
   partialUpdate,
   deleteUser,
+  deleteAllUsers
 } from "../controllers/usersController";
 
 const router = Router();
@@ -16,5 +17,6 @@ router.get("/users/:id", getUserById);
 router.put("/users/:id", updateUser);
 router.patch("/users/:id", partialUpdate);
 router.delete("/users/:id", deleteUser);
+router.delete("/users", deleteAllUsers)
 
 export default router;
