@@ -43,6 +43,21 @@ export const updateUser = async (req: Request, res: Response) => {
   res.json(users[userIndex]);
 };
 
+export const partialUpdate = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const userIndex = users.findIndex((u) => u.id === id);
+  if (userIndex === -1) {
+    return res
+      .status(400)
+      .json({ mensagem: "Informe nome ou email para atualizar" });
+  }
+
+  if (req.body.name) users[userIndex].name = req.body.name;
+  if (req.body.email) users[userIndex].email = req.body.email;
+
+  res.json(users[userIndex]);
+};
+
 export const deleteUser = async (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const userIndex = users.findIndex((u) => u.id === id);
