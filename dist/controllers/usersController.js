@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.partialUpdate = exports.updateUser = exports.getUserById = exports.listUsers = exports.createUser = void 0;
+exports.deleteAllUsers = exports.deleteUser = exports.partialUpdate = exports.updateUser = exports.getUserById = exports.listUsers = exports.createUser = void 0;
 const express_1 = require("express");
 const router = (0, express_1.Router)();
 let users = [];
@@ -70,3 +70,9 @@ const deleteUser = async (req, res) => {
     res.json({ mensagem: "Usuário deletado", user: deleted });
 };
 exports.deleteUser = deleteUser;
+const deleteAllUsers = async (req, res) => {
+    const deletedCount = users.length;
+    users = [];
+    return res.json({ mensagem: "Todos os usuários foram deletados", deleted: deletedCount });
+};
+exports.deleteAllUsers = deleteAllUsers;

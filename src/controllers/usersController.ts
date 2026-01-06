@@ -67,3 +67,9 @@ export const deleteUser = async (req: Request, res: Response) => {
   const deleted = users.splice(userIndex, 1)[0];
   res.json({ mensagem: "Usuário deletado", user: deleted });
 };
+
+export const deleteAllUsers = async (req: Request, res: Response) => {
+  const deletedCount = users.length;
+  users = [];
+  return res.json({ mensagem: "Todos os usuários foram deletados", deleted: deletedCount });
+};
